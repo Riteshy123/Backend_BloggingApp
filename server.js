@@ -7,6 +7,13 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
 });
 
+app.get("/", (req, res) => {
+	return res.json({
+		success:true,
+		message:'Your server is up and running....'
+	});
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
 });
